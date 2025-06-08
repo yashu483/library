@@ -9,11 +9,68 @@
 </head>
 
 <body>
+    <div class="form-container">
+        <form action="">
+            <div>
+                <label for="title">Title: </label>
+                <input type="text" id="title">
+            </div>
+            <div>
+                <label for="author">
+                    Author:
+                </label>
+                <input type="text" id="author">
+
+            </div>
+            <div><label for="pages">Pages: </label>
+                <input type="number" min="1" max="999999">
+            </div>
+            <div>
+                <label for="genre">Genre: </label>
+                <select name="genre" id="genre">
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="biography">Biography</option>
+                    <option value="hysterical">Hysterical</option>
+                    <option value="novel">Novel</option>
+                    <option value="sci-fi">Science Fiction</option>
+                    <option value="non-fiction">Non Fiction</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="arts">Art</option>
+                </select>
+
+            </div>
+            <div>
+                <label for="status">Status: </label>
+                <select name="status" id="status">
+                    <option value="unread">Unread</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="published-date">Published Dated:</label>
+                <input type="date" id="published-date">
+            </div>
+            <div>
+                <button id="cancel-button" type="button">Cancel</button>
+                <button id="reset-button" type="reset">Reset</button>
+                <button id="submit-button" type="button">Submit</button>
+            </div>
+        </form>
+        <script>
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById("published-date").setAttribute("max", today);
+        </script>
+    </div>
     <div class="wrapper">
         <div class="top">
             <div class="tagline">"Read. Learn. Grow."</div>
             <div class="login-buttons">
-                <span>Keep your  data safe by uploading it to cloud<img id="right-arrow-icon" src="resources/images-and-icons/right-arrow.png" alt="an  arrow indicating towards right side for login or signing up"></span>
+                <span>Keep your data safe by uploading it to cloud<img id="right-arrow-icon"
+                        src="resources/images-and-icons/right-arrow.png"
+                        alt="an  arrow indicating towards right side for login or signing up"></span>
                 <button class="log-in">Log in</button>
                 <button class="sign-up">Sign up</button>
             </div>
@@ -23,9 +80,12 @@
             <div id="navigation">
                 <div id="header-links">
                     <ul>
-                        <li>Browse <img id="caret-down" src="resources/images-and-icons/caret-down.png" alt="dropdown icon"></li>
-                        <li>My books <img id="caret-down" src="resources/images-and-icons/caret-down.png" alt="dropdown icon"></li>
-                        <li>More <img id="caret-down" src="resources/images-and-icons/caret-down.png" alt="dropdown icon"></li>
+                        <li>Browse <img id="caret-down" src="resources/images-and-icons/caret-down.png"
+                                alt="dropdown icon"></li>
+                        <li>My books <img id="caret-down" src="resources/images-and-icons/caret-down.png"
+                                alt="dropdown icon"></li>
+                        <li>More <img id="caret-down" src="resources/images-and-icons/caret-down.png"
+                                alt="dropdown icon"></li>
                     </ul>
                 </div>
                 <div id="search-bar">
@@ -40,19 +100,73 @@
             <div id="genre-section">
                 <div>Browse by Subject</div>
                 <div id="genre-container">
-                    <div><div><img class="arrow-icon" src="resources/images-and-icons/arrow.png" alt="left-arrow icon"></div></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/fantacy.jpg" alt="icon indicating fantasy genre for book"> <p>Fantasy</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/biography.webp" alt="icon indicating biography genre for books"><p>Biography</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/hystorical.jpeg" alt=""><p>Hysterical</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/non-fiction.jpeg" alt=""><p>Non Fiction</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/novel.jpeg" alt=""><p>Novel</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/mystery.jpg" alt=""><p>Mystery</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/thriller.jpeg" alt=""><p>Thriller</p></div>
-                    <div class="genre-icons-container"><img class="genre-icons" src="resources/images-and-icons/art.jpeg" alt=""><p>Arts</p></div>
-                    <div><div><img class="arrow-icon" src="resources/images-and-icons/arrow.png" alt="right-arrow-icon"></div></div>
+                    <div>
+                        <div><img class="arrow-icon" src="resources/images-and-icons/arrow.png" alt="left-arrow icon">
+                        </div>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/fantacy.jpg" alt="icon indicating fantasy genre for book">
+                        <p>Fantasy</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/biography.webp"
+                            alt="icon indicating biography genre for books">
+                        <p>Biography</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/hystorical.jpeg" alt="">
+                        <p>Hysterical</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/non-fiction.jpeg" alt="">
+                        <p>Non Fiction</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/novel.jpeg" alt="">
+                        <p>Novel</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/mystery.jpg" alt="">
+                        <p>Mystery</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/thriller.jpeg" alt="">
+                        <p>Thriller</p>
+                    </div>
+                    <div class="genre-icons-container"><img class="genre-icons"
+                            src="resources/images-and-icons/art.jpeg" alt="">
+                        <p>Arts</p>
+                    </div>
+                    <div>
+                        <div><img class="arrow-icon" src="resources/images-and-icons/arrow.png" alt="right-arrow-icon">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="book-container"></div>
+            <div id="book-container">
+                <div id="heading-for-book-container">
+                    <div>Your Books</div>
+                    <button id="add-new-book">Add New Book +</button>
+                </div>
+                <div id="book-holder">
+                    <div class="card">
+                        <div class="card-heading">BOOK</div>
+                        <ul class="card-details">
+                            <li class="title">Title: <span></span></li>
+                            <li class="author">Author: <span></span></li>
+                            <li class="pages">Pages: <span></span></li>
+                            <li class="genre">Genre: <span></span></li>
+                            <li class="status">Status: <span></span></li>
+                            <li class="published-date">Published Date: <span></span></li>
+                        </ul>
+                        <div class="card-buttons">
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">Created by Yashu</div>
+            </div>
         </div>
     </div>
     <script src="./using-class.js"> </script>
