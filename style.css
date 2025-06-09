@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "roboto";
+    src: url(resources/fonts/RobotoCondensed-Regular.woff) format('woff'),
+        url(resources/fonts/RobotoCondensed-Regular.woff2) format('woff2');
+}
+
+:root {
+    font-family: 'roboto', system-ui;
+}
+
 /* css reset for form control*/
 
 button,
@@ -8,9 +18,10 @@ textarea {
     font-size: 100%;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
+
 html,
 body {
     width: 100%;
@@ -29,6 +40,7 @@ body {
     padding: 3px;
     grid-template-rows: 0.7fr 1.5fr 8fr;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .top {
@@ -38,7 +50,8 @@ body {
     align-items: center;
     padding: 0 40px;
     flex-wrap: wrap;
-    border: 1px solid red;
+    background-color: azure;
+
 }
 
 .top>div:first-child {
@@ -87,14 +100,15 @@ body {
     flex-wrap: wrap;
     align-items: center;
     grid-row: 2;
-    border: 1px solid red;
     padding: 0 40px;
     gap: 10rem;
-
+    background-image: url(resources/background/gradient.jpg);
+    color: white;
 }
 
 #website-name {
     font-size: 4rem;
+    transform: skew(-20deg);
 }
 
 #caret-down {
@@ -162,14 +176,18 @@ body {
     grid-row: 3;
     display: grid;
     grid-template-rows: 1.5fr 3fr;
+    /* border: 3px solid rgb(0, 0, 54); */
+    border-radius: 10px;
+    border: 3px solid lightcyan;
+
 }
 
 
 
 #genre-section {
     grid-row: 1;
-    border: 1px solid red;
     padding: 10px 40px;
+    background-color: azure;
 
     display: grid;
     grid-template-rows: max-content 1fr;
@@ -200,12 +218,6 @@ body {
     padding: 0 4rem;
 }
 
-/* #genre-container > div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 #genre-container>div:first-child>div {
     transform: rotate(180deg);
     padding: 8px;
@@ -223,13 +235,11 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* background-color: black; */
 }
 
 #genre-container>div:first-child,
 #genre-container>div:last-child {
     display: flex;
-    /* border-radius: 500px; */
     padding: 8px;
 }
 
@@ -253,6 +263,9 @@ body {
     display: grid;
     grid-template-rows: max-content 1fr 3rem;
     box-sizing: border-box;
+    background-color: rgb(0, 0, 54);
+    /* background-image: url(resources/background/black.jpg);
+    color: white; */
 }
 
 #heading-for-book-container {
@@ -273,7 +286,7 @@ body {
     padding: 8px 2rem;
     background-color: green;
     border-radius: 100px;
-    border: none;
+    border: 3px solid gold;
     color: white;
     font-weight: 700;
 }
@@ -296,6 +309,7 @@ body {
     padding: 10px;
     overflow: hidden;
     border-radius: 20px;
+    background-color: azure;
 }
 
 .card-heading {
@@ -307,6 +321,10 @@ body {
     font-size: 1.2rem;
     transform: skew(-50deg);
     letter-spacing: 3px;
+    background-color: blue;
+    color: orange;
+    font-weight: 900;
+    margin-bottom: 5px;
 }
 
 .card-details {
@@ -357,7 +375,6 @@ body {
     align-items: center;
     font-size: 1.2rem;
     font-weight: 400;
-    border: 1px solid red;
 }
 
 /* form control styles */
@@ -408,9 +425,10 @@ form label {
     font-weight: 600;
 }
 
-form label > span{
+form label>span {
     color: red;
 }
+
 form>div {
     display: flex;
     justify-content: space-between;
