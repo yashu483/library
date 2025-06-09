@@ -94,6 +94,14 @@ class LibraryController {
 
     static getAllBooks() {
         return this.#myLibrary;
+    };
+    static addTwoInitialBooks(){
+        const book1 = new Book('Atomic Habits', 'James Clear', 320, 'completed', 'Non-fiction','2018-10-16' );
+        const book2 = new Book('The Lord Of the Rings', 'John Ronald Reuel Tolkien',
+            1300, 'unread','Fantasy','1954-07-29'
+        );
+        this.addBookToLibrary(book1);
+        this.addBookToLibrary(book2);
     }
 };
 
@@ -315,31 +323,7 @@ class DOMController {
             })
         })
 
-    }
-
-    // static editBtnn() {
-    //     const allEditButtons = document.querySelectorAll('.edit-button');
-
-    //     allEditButtons.forEach((btn) => {
-    //         btn.addEventListener('click', () => {
-    //             const books = LibraryController.getAllBooks();
-    //             const cards = document.querySelectorAll('.card');
-
-    //             books.forEach((item) => {
-
-    //                 if (btn.id == item.getId()) {
-    //                     const formContainer = document.querySelector('.form-container');
-    //                     formContainer.style.display = 'flex';
-
-    //                     // put all current values of book into form
-
-
-    //                 }
-    //             })
-    //         })
-
-    //     })
-    // }
+    };
 
     static editBtn() {
         const cards = document.querySelectorAll('.card');
@@ -377,6 +361,7 @@ class DOMController {
         })
     }
     static initializePage() {
+        LibraryController.addTwoInitialBooks();
         this.showAllBooks();
         this.addNewBookButton();
         this.formSubmitButton();
