@@ -95,10 +95,10 @@ class LibraryController {
     static getAllBooks() {
         return this.#myLibrary;
     };
-    static addTwoInitialBooks(){
-        const book1 = new Book('Atomic Habits', 'James Clear', 320, 'completed', 'Non-fiction','2018-10-16' );
+    static addTwoInitialBooks() {
+        const book1 = new Book('Atomic Habits', 'James Clear', 320, 'completed', 'Non-fiction', '2018-10-16');
         const book2 = new Book('The Lord Of the Rings', 'John Ronald Reuel Tolkien',
-            1300, 'unread','Fantasy','1954-07-29'
+            1300, 'unread', 'Fantasy', '1954-07-29'
         );
         this.addBookToLibrary(book1);
         this.addBookToLibrary(book2);
@@ -220,6 +220,7 @@ class DOMController {
             let isOnEdit = books.filter((book) => {
                 if (book.getId() == formContainer.id) { return true };
             });
+            formContainer.id = null;
             if (isOnEdit.length == 1) {
                 if (!form.checkValidity()) {
                     event.preventDefault(); // Prevent form submission
@@ -253,7 +254,7 @@ class DOMController {
                     const resetButton = document.querySelector("#reset-button");
                     resetButton.click();
                     formContainer.style.display = 'none';
-                }
+                };
             }
             else {
                 if (!form.checkValidity()) {
